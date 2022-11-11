@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Discryptor 
+    { 
+    private: 
+    public: 
+        static void Dyscriptor(string bN) 
+        { 
+            bool* ptrarray = new bool[bN.length() - 1]; 
+ 
+            int decimal = 0; 
+ 
+            int discharge = 0; 
+ 
+            bool err = false; 
+ 
+            for (int i = bN.length() - 1; i >= 0; i--) 
+            { 
+                if (bN[i] == '0') 
+                { 
+                    ptrarray[i] = false; 
+                } 
+                else if (bN[i] == '1') 
+                { 
+                    ptrarray[i] = true; 
+                    decimal = decimal + (pow(2, discharge)); 
+                } 
+                else { 
+                    decimal = 0; 
+                    err = true; 
+                    break; 
+                } 
+                discharge++; 
+            } 
+ 
+            if (err == true) 
+            { 
+                system("cls"); 
+                cout << "Перезапустите программу!" << endl; 
+            } 
+ 
+            cout << endl; 
+            cout << "Десятичное число: " << decimal << endl; 
+            system("pause"); 
+        } 
+        
+    }
